@@ -1,6 +1,7 @@
 const botones = document.querySelector('#botones')
 const nombreUsuario = document.querySelector('#nombreUsuario')
 const matricula = document.querySelector('#matricula')
+const telefono = document.querySelector('#telefono')
 const contenidoProtegido = document.querySelector('#contenidoProtegido')  
 const formulario = document.querySelector('#formu') 
 const inputChat= document.querySelector('#inputChat')
@@ -10,6 +11,7 @@ firebase.auth().onAuthStateChanged(user => {
         console.log(user)
         nombreUsuario.innerHTML = user.displayName
         matricula.innerHTML = user.uid
+        telefono.innerHTML = user.phoneNumber
         accionCerrarSesion()
         formulario.classList= 'input-group py-3 fixed-bottom container'       
         contenidoProtegido.innerHTML = /*html*/`
